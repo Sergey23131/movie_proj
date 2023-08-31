@@ -1,10 +1,10 @@
-const baseURL = 'https://api.themoviedb.org/3/discover'
+const baseURL = 'https://api.themoviedb.org/3/'
 
-const movies = '/movie'
+const movies = 'discover/movie'
 const urls = {
     movies: {
         movies,
-       // byId: (id: number): string => `${cars}/${id}`,
+        byId: (id: number): string => `/movie/${id}?append_to_response=videos`,
 
     }
 }

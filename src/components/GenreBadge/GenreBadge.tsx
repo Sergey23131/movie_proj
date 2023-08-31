@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, {Component, FC} from 'react';
 
-class GenreBadge extends Component {
-    render() {
+const GenreBadge: FC = () =>{
+
         return (
             <div>
-                
+                GenreBadge
             </div>
         );
-    }
+
 }
 
-export default GenreBadge;
+export {GenreBadge};

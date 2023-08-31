@@ -2,10 +2,11 @@ import {createAsyncThunk, createSlice, isFulfilled, isRejectedWithValue} from '@
 import {AxiosError} from 'axios';
 
 import {IMovie, IError} from '../../interfaces';
-import { movieService} from '../../services';
+import {movieService} from '../../services';
 
 interface IState {
     movies: IMovie[],
+    movie: IMovie | null,
     errors: IError,
     trigger: boolean,
 
@@ -13,6 +14,7 @@ interface IState {
 
 const initialState: IState = {
     movies: [],
+    movie: null,
     errors: null,
     trigger: false
 
@@ -24,6 +26,19 @@ const getAll = createAsyncThunk<IMovie[], void>(
     async (_, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getAll();
+            const {results} = data;
+            return results
+        } catch (e) {
+            const err = e as AxiosError
+            return rejectWithValue(err.response.data)
+        }
+    }
+)
+const getByID = createAsyncThunk<IMovie, { id: number }>(
+    'movieSlice/getById',
+    async ({id}, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getById(id);
             return data
         } catch (e) {
             const err = e as AxiosError
@@ -32,19 +47,23 @@ const getAll = createAsyncThunk<IMovie[], void>(
     }
 )
 
+
 const slice = createSlice({
     name: 'movieSlice',
     initialState,
     reducers: {
-       /* setCarForUpdate: (state, action) => {
-            state.carForUpdate = action.payload
-        }*/
+        /* setCarForUpdate: (state, action) => {
+             state.carForUpdate = action.payload
+         }*/
     },
 
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
                 state.movies = action.payload
+            })
+            .addCase(getByID.fulfilled, (state, action) => {
+                state.movie = action.payload
             })
             .addMatcher(isFulfilled(), state => {
                 state.errors = null
@@ -60,6 +79,7 @@ const {actions, reducer: movieReducer} = slice;
 const movieActions = {
     ...actions,
     getAll,
+    getByID
 
 }
 

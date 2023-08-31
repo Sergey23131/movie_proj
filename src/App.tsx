@@ -1,27 +1,31 @@
 import React from 'react';
 import './App.css';
 
+import {Navigate, Route, Routes} from 'react-router-dom';
+
+import {MainLayout} from './layouts';
 
 import {FC, useEffect} from 'react';
 
 import {movieActions} from "./redux/slice";
 import {useAppDispatch, useAppSelector} from './hooks';
+import {MainPage, MoviePage} from "./pages";
+import { MovieList } from './components';
 
 
-const App: FC = () => {
-    const {movies, trigger} = useAppSelector(state => state.movieReducer);
-    const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        dispatch(movieActions.getAll())
-    }, [dispatch, trigger])
-
-    console.log(movies)
+const App = () => {
 
   return (
-    <div className="App">
-      App
-    </div>
+      <Routes>
+          <Route path={'/'} element={<MainLayout/>}>
+              <Route index element={<Navigate to={'movies'}/>}/>
+              <Route path={'movies'} element={<MovieList/>}/>
+              <Route path={'/movies/:id'} element={<MoviePage/>}/>
+
+
+
+          </Route>
+      </Routes>
   );
 }
 
