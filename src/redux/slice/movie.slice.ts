@@ -7,11 +7,15 @@ import { movieService} from '../../services';
 interface IState {
     movies: IMovie[],
     errors: IError,
+    trigger: boolean,
+
 }
 
 const initialState: IState = {
     movies: [],
     errors: null,
+    trigger: false
+
 };
 
 
