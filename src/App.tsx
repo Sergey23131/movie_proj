@@ -5,11 +5,7 @@ import {Navigate, Route, Routes} from 'react-router-dom';
 
 import {MainLayout} from './layouts';
 
-import {FC, useEffect} from 'react';
-
-import {movieActions} from "./redux/slice";
-import {useAppDispatch, useAppSelector} from './hooks';
-import {MainPage, MoviePage} from "./pages";
+import { MoviePage} from "./pages";
 import { MovieList } from './components';
 
 

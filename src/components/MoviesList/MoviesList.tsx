@@ -1,8 +1,8 @@
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {FC, useEffect} from "react";
-import {movieActions} from "../../redux/slice";
 import {MovieListCard} from "../MoviesListCard";
 import {Outlet} from "react-router-dom";
+import { movieActions } from "../../redux";
 
 const MovieList: FC = () => {
     const {movies, trigger} = useAppSelector(state => state.movieReducer);

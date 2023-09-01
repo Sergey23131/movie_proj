@@ -1,7 +1,8 @@
 import {FC} from "react";
 import {IMovie} from "../../interfaces";
 import {StarsRating} from "../StarsRating";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
+import {GenreBadge} from "../GenreBadge";
 
 interface IProps {
     movie: IMovie;
@@ -9,8 +10,7 @@ interface IProps {
 
 
 const MovieListCard: FC<IProps> = ({movie}) => {
-    const navigate = useNavigate();
-    const {id, title, vote_average, backdrop_path} = movie;
+    const {id, original_title, vote_average, backdrop_path,genre_ids} = movie;
 
     const imgBuilder = (backdrop_path: string, size = 400) => `https://image.tmdb.org/t/p/w${size}${backdrop_path}`
 
@@ -18,10 +18,11 @@ const MovieListCard: FC<IProps> = ({movie}) => {
     return (
         <Link to={`/movies/${id}`}>
 
-            <p>{title}</p>
+            <p>{original_title}</p>
             <img src={imgBuilder(backdrop_path)} alt="Movie poster"/>
+            <GenreBadge ganres={genre_ids}/>
             <div>
-                <StarsRating key={movie.id} rating={vote_average}/>
+                <StarsRating rating={vote_average}/>
             </div>
 
         </Link>
