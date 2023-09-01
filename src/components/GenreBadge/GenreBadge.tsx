@@ -4,13 +4,16 @@ import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genresActions} from "../../redux";
 
 interface IProps {
-    ganres: number[];
+    genresId: number[];
 }
 
 
-const GenreBadge: FC<IProps> = ({ganres}) =>{
+const GenreBadge: FC<IProps> = ({genresId}) =>{
     const {genres} = useAppSelector(state => state.genresReducer);
     const dispatch = useAppDispatch();
+
+    const filteredGenres = genres.filter(genre => genresId.includes(genre.id));
+
 
     useEffect(() => {
         dispatch(genresActions.getAll())
@@ -19,7 +22,12 @@ const GenreBadge: FC<IProps> = ({ganres}) =>{
 
     return (
             <div>
-                GenreBadge
+                {filteredGenres.map(genre => (
+                    <div key={genre.id}>
+                        {genre.name}
+                    </div>
+                ))}
+
             </div>
         );
 

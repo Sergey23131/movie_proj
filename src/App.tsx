@@ -5,7 +5,7 @@ import {Navigate, Route, Routes} from 'react-router-dom';
 
 import {MainLayout} from './layouts';
 
-import { MoviePage} from "./pages";
+import {MoviePage, UserPage} from "./pages";
 import { MovieList } from './components';
 
 
@@ -17,6 +17,7 @@ const App = () => {
               <Route index element={<Navigate to={'movies'}/>}/>
               <Route path={'movies'} element={<MovieList/>}/>
               <Route path={'/movies/:id'} element={<MoviePage/>}/>
+              <Route path={'/userPage'} element={<UserPage/>}/>
 
 
 

@@ -1,0 +1,21 @@
+.searchInput {
+    width: 500px;
+    font-size: 17px;
+    padding: 5px 10px;
+    flex-grow: 10;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+.searchInput:active {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.white {
+    background-color: #ccced7;
+}
+.dark {
+    background-color: #373752;
+    color: #81c1f3;
+}

@@ -10,7 +10,7 @@ interface IProps {
 
 
 const MovieListCard: FC<IProps> = ({movie}) => {
-    const {id, original_title, vote_average, backdrop_path,genre_ids} = movie;
+    const {id, original_title, vote_average, backdrop_path,genre_ids,overview} = movie;
 
     const imgBuilder = (backdrop_path: string, size = 400) => `https://image.tmdb.org/t/p/w${size}${backdrop_path}`
 
@@ -20,7 +20,8 @@ const MovieListCard: FC<IProps> = ({movie}) => {
 
             <p>{original_title}</p>
             <img src={imgBuilder(backdrop_path)} alt="Movie poster"/>
-            <GenreBadge ganres={genre_ids}/>
+            <p>{overview}</p>
+            <GenreBadge genresId={genre_ids}/>
             <div>
                 <StarsRating rating={vote_average}/>
             </div>

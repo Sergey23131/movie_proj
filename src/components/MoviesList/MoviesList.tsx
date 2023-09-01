@@ -4,6 +4,8 @@ import {MovieListCard} from "../MoviesListCard";
 import {Outlet} from "react-router-dom";
 import { movieActions } from "../../redux";
 
+
+
 const MovieList: FC = () => {
     const {movies, trigger} = useAppSelector(state => state.movieReducer);
     const dispatch = useAppDispatch();
@@ -13,10 +15,10 @@ const MovieList: FC = () => {
     }, [dispatch, trigger])
 
 
-
     return (
         <div>
             {
+
                 movies.map(value => <MovieListCard key={value.id} movie={value}/>)
             }
             <Outlet/>

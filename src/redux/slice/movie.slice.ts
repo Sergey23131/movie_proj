@@ -1,13 +1,15 @@
 import {IError, IMovie} from "../../interfaces";
 import {createAsyncThunk, createSlice, isFulfilled, isRejectedWithValue} from "@reduxjs/toolkit";
-import { movieService } from "../../services";
-import { AxiosError } from "axios";
+import {movieService} from "../../services";
+import {AxiosError} from "axios";
 
 interface IState {
     movies: IMovie[],
     movie: IMovie | null,
     errors: IError,
     trigger: boolean,
+    page: number,
+    total_pages: number
 
 }
 
@@ -15,7 +17,9 @@ const initialState: IState = {
     movies: [],
     movie: null,
     errors: null,
-    trigger: false
+    trigger: false,
+    page: 1,
+    total_pages: 1
 
 };
 
@@ -44,7 +48,6 @@ const getByID = createAsyncThunk<IMovie, { id: number }>(
             return rejectWithValue(err.response.data)
         }
     }
-
 )
 
 
