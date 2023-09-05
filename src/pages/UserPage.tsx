@@ -1,9 +1,11 @@
+import { UserInfo } from "../components";
+
 const UserPage = () => {
 
 
     return (
         <div>
-            UserPage
+            <UserInfo/>
         </div>
     );
 

@@ -1,11 +1,14 @@
-import {IError, IMovie} from "../../interfaces";
+import {IError, IGenres, IMovie} from "../../interfaces";
 import {createAsyncThunk, createSlice, isFulfilled, isRejectedWithValue} from "@reduxjs/toolkit";
 import {movieService} from "../../services";
 import {AxiosError} from "axios";
+import {IVideo} from "../../interfaces";
+import {videoService} from "../../services";
 
 interface IState {
     movies: IMovie[],
     movie: IMovie | null,
+    movieVideo: IVideo,
     errors: IError,
     trigger: boolean,
     page: number,
@@ -15,6 +18,7 @@ interface IState {
 
 const initialState: IState = {
     movies: [],
+    movieVideo: null,
     movie: null,
     errors: null,
     trigger: false,
@@ -50,6 +54,32 @@ const getByID = createAsyncThunk<IMovie, { id: number }>(
     }
 )
 
+const getByGenre = createAsyncThunk<IGenres, { id: number }>(
+    'movieSlice/getByGenre',
+    async ({id}, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getByGenre(id);
+            return data
+        } catch (e) {
+            const err = e as AxiosError
+            return rejectWithValue(err.response.data)
+        }
+    }
+)
+
+const getVideo = createAsyncThunk<IVideo, { id: number }>(
+    'movieSlice/getVideo',
+    async ({id}, {rejectWithValue}) => {
+        try {
+            const {data} = await videoService.getById(id);
+            return data
+        } catch (e) {
+            const err = e as AxiosError
+            return rejectWithValue(err.response.data)
+        }
+    }
+)
+
 
 const slice = createSlice({
     name: 'movieSlice',
@@ -68,6 +98,9 @@ const slice = createSlice({
             .addCase(getByID.fulfilled, (state, action) => {
                 state.movie = action.payload
             })
+            .addCase(getVideo.fulfilled, (state, action) => {
+                state.movieVideo = action.payload
+            })
             .addMatcher(isFulfilled(), state => {
                 state.errors = null
             })
@@ -82,7 +115,9 @@ const {actions, reducer: movieReducer} = slice;
 const movieActions = {
     ...actions,
     getAll,
-    getByID
+    getByID,
+    getVideo,
+    getByGenre
 
 }
 

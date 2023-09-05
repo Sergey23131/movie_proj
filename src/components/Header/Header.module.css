@@ -1,4 +1,49 @@
 .headerWrapper {
-    background-color: blueviolet;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 100;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.logoLink {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+}
+
+.lightModeButton {
+    font-size: 20px;
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.userLink {
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.userImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }

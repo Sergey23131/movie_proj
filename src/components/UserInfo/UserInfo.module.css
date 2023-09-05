@@ -1,0 +1,80 @@
+
+.userInfoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.userInfoCard {
+    background-color: #fff;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.userInfoContent {
+    display: flex;
+    padding: 20px;
+}
+
+.userInfoPhoto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+}
+
+.userInfoDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.userInfoName {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.userInfoInfo {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.userInfoTabs {
+    display: flex;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+.userInfoTab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.userInfoTab:hover {
+    background-color: #ddd;
+}
+
+.userInfoTab.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.userInfoTabContent {
+    padding: 20px;
+}
+
+.tabContent {
+    display: none;
+}
+
+.tabContent.active {
+    display: block;
+}

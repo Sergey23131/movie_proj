@@ -1,5 +1,4 @@
 import React, {Component, FC, useEffect} from 'react';
-import {IMovie} from "../../interfaces";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genresActions} from "../../redux";
 
@@ -8,9 +7,10 @@ interface IProps {
 }
 
 
-const GenreBadge: FC<IProps> = ({genresId}) =>{
+const GenreBadge: FC<IProps> = ({genresId}) => {
     const {genres} = useAppSelector(state => state.genresReducer);
     const dispatch = useAppDispatch();
+
 
     const filteredGenres = genres.filter(genre => genresId.includes(genre.id));
 
@@ -21,15 +21,15 @@ const GenreBadge: FC<IProps> = ({genresId}) =>{
 
 
     return (
-            <div>
-                {filteredGenres.map(genre => (
-                    <div key={genre.id}>
-                        {genre.name}
-                    </div>
-                ))}
+        <div>
+            {filteredGenres && filteredGenres.map(genre => (
+                <div key={genre.id}>
+                    {genre.name}
+                </div>
+            ))}
 
-            </div>
-        );
+        </div>
+    );
 
 }
 

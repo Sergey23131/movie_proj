@@ -1,0 +1,57 @@
+
+
+.movieListCardWrapper {
+    display: inline-block;
+    width: calc(25% - 25px); /* 20% ширины родительского контейнера минус отступы */
+    height: 500px;
+    margin: 10px;
+    padding: 10px 20px 10px 20px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    box-sizing: border-box; /* Учитываем границу и padding в расчетах ширины */
+    overflow: hidden; /* Скрываем избыточный текст */
+    vertical-align: top; /* Выравнивание по верхнему краю */
+    background-color: #333333;
+    border-radius: 30px;
+    color: white;
+    transition: box-shadow 0.1s ease-in-out;
+
+
+}
+
+.movieListTitle{
+    font-size: 25px;
+}
+.movieCard{
+    text-decoration: none;
+    color: white;
+}
+
+.movieListCardWrapper:hover  {
+    box-shadow: 0 0 10px 3px white; /* Создание свечения (белая тень) при наведении */
+}
+
+/* Стили для изображения внутри movieCard */
+.movieCardImg {
+    max-width: 100%;
+    max-height: 60%; /* Высота изображения внутри карточки */
+    display: block;
+    margin: 0 auto; /* Центрирование изображения */
+    border: 1px solid #090808; /* Граница для изображения */
+}
+
+/* Стили для параграфов внутри movieCard */
+.movieCardOverview{
+    padding-top: 10px;
+    margin: 5px 0;
+    font-size: 20px; /* Размер шрифта текста */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Максимальное количество строк */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Добавляем многоточие для обрезанного текста */
+
+}
+
+
+

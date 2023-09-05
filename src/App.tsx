@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import css from './App.module.css';
 
 import {Navigate, Route, Routes} from 'react-router-dom';
 
@@ -12,6 +12,7 @@ import { MovieList } from './components';
 const App = () => {
 
   return (
+      <div className={css.AppMain}>
       <Routes>
           <Route path={'/'} element={<MainLayout/>}>
               <Route index element={<Navigate to={'movies'}/>}/>
@@ -23,6 +24,7 @@ const App = () => {
 
           </Route>
       </Routes>
+      </div>
   );
 }
 
