@@ -5,8 +5,8 @@ const urls = {
     movies: {
         movies: (currentPage: string) => `discover/movie?page=${currentPage}`,
         byId: (id: number): string => `/movie/${id}?append_to_response=videos`,
-        byGenre: (genreId: number): string => `/discover/movie?with_genres=${genreId}`,
-        bySearch: (params: string): string => `/search/movie${params}`
+        byGenre: (genreId: number, currentPage: string): string => `/discover/movie?with_genres=${genreId}&page=${currentPage}`,
+        bySearch: (params: string, currentPage: string): string => `/search/movie?query=${params}&page=${currentPage}`
     },
     genres: {
         genres

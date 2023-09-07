@@ -42,19 +42,34 @@ const getAll = createAsyncThunk<{ movies: IMovie[], total_pages: number }, strin
     }
 );
 
-const getBySearch = createAsyncThunk<IMovie[], { params: string }>(
-    'movieSlice/getAll',
-    async ({params}, {rejectWithValue}) => {
+const getBySearch = createAsyncThunk<{ movies: IMovie[], total_pages: number }, { params: string, currentPage: string }>(
+    'movieSlice/getBySearch',
+    async ({params, currentPage}, {rejectWithValue}) => {
         try {
-            const {data} = await movieService.getBySearch(params);
-            const {results} = data;
-            return results;
+            const {data} = await movieService.getBySearch(params, currentPage);
+            const {results, total_pages} = data;
+            return {movies: results, total_pages};
         } catch (e) {
             const err = e as AxiosError;
             return rejectWithValue(err.response.data);
         }
     }
 );
+
+
+const getByGenre = createAsyncThunk<{ movies: IMovie[], total_pages: number }, { id: number, currentPage: string }>(
+    'movieSlice/getByGenre',
+    async ({id, currentPage}, {rejectWithValue}) => {
+        try {
+            const {data} = await movieService.getByGenre(id, currentPage);
+            const {results, total_pages} = data;
+            return {movies: results, total_pages};
+        } catch (e) {
+            const err = e as AxiosError
+            return rejectWithValue(err.response.data)
+        }
+    }
+)
 
 const getByID = createAsyncThunk<IMovie, { id: number }>(
     'movieSlice/getById',
@@ -69,19 +84,6 @@ const getByID = createAsyncThunk<IMovie, { id: number }>(
     }
 )
 
-const getByGenre = createAsyncThunk<IMovie[], { id: number }>(
-    'movieSlice/getByGenre',
-    async ({id}, {rejectWithValue}) => {
-        try {
-            const {data} = await movieService.getByGenre(id);
-            const {results} = data
-            return results;
-        } catch (e) {
-            const err = e as AxiosError
-            return rejectWithValue(err.response.data)
-        }
-    }
-)
 
 const getVideo = createAsyncThunk<IVideo, { id: number }>(
     'movieSlice/getVideo',
@@ -120,10 +122,12 @@ const slice = createSlice({
                 state.total_pages = action.payload.total_pages;
             })
             .addCase(getByGenre.fulfilled, (state, action) => {
-                state.movies = action.payload
+                state.movies = action.payload.movies;
+                state.total_pages = action.payload.total_pages;
             })
             .addCase(getBySearch.fulfilled, (state, action) => {
-                state.movies = action.payload
+                state.movies = action.payload.movies;
+                state.total_pages = action.payload.total_pages;
             })
             .addCase(getByID.fulfilled, (state, action) => {
                 state.movie = action.payload

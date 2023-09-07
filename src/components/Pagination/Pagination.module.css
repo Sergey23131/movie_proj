@@ -1,3 +1,39 @@
-.PaginationWrapper{
-    color: white;
+/* Стили для кнопок пагинации */
+
+.pagination{
+    margin-top: 20px;
 }
+.pagination button  {
+    padding: 10px 20px; /* Размер отступов */
+    background-color: black; /* Фон кнопки */
+    border: 1px solid #ccc; /* Граница кнопки */
+    margin: 2px; /* Отступы между кнопками */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавные изменения при наведении */
+}
+
+.pagination button:hover {
+    background-color: #ffffff; /* Фон при наведении */
+    color: #000000; /* Цвет текста при наведении */
+}
+
+/* Стили для выбранной страницы */
+.pagination button.currentPage {
+    background-color: #ffffff; /* Цвет фона для текущей страницы */
+    color: #000000; /* Цвет текста для текущей страницы */
+    border: 3px solid #455767; /* Граница для текущей страницы */
+}
+
+/* Стили для кнопки "Предыдущая страница" */
+.pagination button.prevPage {
+    margin-right: 10px; /* Отступ справа */
+}
+
+/* Стили для кнопки "Следующая страница" */
+.pagination button.nextPage {
+    margin-left: 10px; /* Отступ слева */
+}
+
+/* Изменение цвета текста и фона при наведении на любую кнопку */
+

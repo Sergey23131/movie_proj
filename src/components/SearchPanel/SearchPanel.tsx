@@ -1,31 +1,37 @@
-import React from "react";
+import React, {FC, useEffect, useState} from "react";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieActions} from "../../redux";
+import css from './SearchPanel.module.css'
 
-const SearchPanel = () => {
-    const getMoviesFromDB = async (e:any) => {
+
+interface IProps {
+    onSearchClick: (value: string) => void;
+}
+
+const SearchPanel: FC<IProps> = ({onSearchClick}) => {
+
+    const [searchText, setSearchText] = useState("");
+
+    const getMoviesFromDB = async (e: any) => {
         e.preventDefault();
-
-       /* const query = queryString.parse(location.search);
-        query.query = searchValue;
-        query.page = '1';
-
-        if(!searchValue) delete query.query;
-
-        history.push('/movies?' + queryString.stringify(query));
-        setSearchValue('');*/
+        onSearchClick(searchText)
     };
 
     return (
-        <div>
+        <div className={css.moviePage}>
             <div>
                 <form onSubmit={getMoviesFromDB}>
-                    <input/>
+                    <input
+                        type="text"
+                        value={searchText}
+                        onChange={(e) => setSearchText(e.target.value)}
+                        className={css.searchInput}
+                    />
+                    <button type="submit" className={css.searchButton}>Search</button> {/* Применяем стили для button */}
                 </form>
-
-
             </div>
         </div>
     );
+};
 
-}
-
-export {SearchPanel};
+export { SearchPanel };

@@ -8,8 +8,8 @@ const movieService = {
     // getAll: (): IRes<IMovie[]> => axiosService.get(urls.movies.movies),
     getAll: (currentPage: string) => axiosService.get(urls.movies.movies(currentPage)),
     getById: (id: number): IRes<IMovie> => axiosService.get(urls.movies.byId(id)),
-    getByGenre: (genreId: number) => axiosService.get(urls.movies.byGenre(genreId)),
-    getBySearch: (params: string) => axiosService.get(urls.movies.bySearch(params))
+    getByGenre: (genreId: number, currentPage: string) => axiosService.get(urls.movies.byGenre(genreId, currentPage)),
+    getBySearch: (params: string, currentPage: string) => axiosService.get(urls.movies.bySearch(params, currentPage))
 }
 
 export {

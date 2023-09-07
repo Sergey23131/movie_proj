@@ -13,21 +13,30 @@ const MovieList: FC = () => {
     const {movies, page, total_pages} = useAppSelector(state => state.movieReducer);
     const {genres} = useAppSelector(state => state.genresReducer);
     const [genreId, setGenreId] = useState<number | null>(null);
+    const [search, setSearch] = useState<string | null>(null);
+
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
+        const pageStr = page.toString();
+
         if (genreId) {
-            dispatch(movieActions.getByGenre({ id: genreId }));
+            dispatch(movieActions.getByGenre({id: genreId, currentPage: pageStr}));
+        } else if (search) {
+            dispatch(movieActions.getBySearch({params: search, currentPage: pageStr}));
         } else {
-            const pageStr = page.toString();
             dispatch(movieActions.getAll(pageStr)).then();
         }
-    }, [dispatch, genreId, page,total_pages]);
+    }, [dispatch, genreId, page, total_pages, search]);
 
     const handleGenreClick = (clickedGenreId: number) => {
         setGenreId(clickedGenreId);
     };
+
+    const handleSearchClick = (value: string) => {
+        setSearch(value);
+    }
 
     const handlePrevPage = () => {
         if (page > 1) {
@@ -36,29 +45,32 @@ const MovieList: FC = () => {
     };
 
     const handleNextPage = () => {
-
         if (page < total_pages) {
             dispatch(movieActions.changePage(page + 1)); // Изменяем текущую страницу в Redux store
         }
     };
 
+    const handlePageChange = (newPage: number) => {
+        dispatch(movieActions.changePage(newPage));
+    };
+
     return (
         <div className={css.movieListWrapper}>
-            <div>
+            <div className={css.movieGenres}>
                 {
                     genres && genres.map(value => <GenresList key={value.id} genre={value}
                                                               onGenreClick={handleGenreClick}/>)
                 }
             </div>
-            <div>
-                <div><HeaderPreview/></div>
+            <div className={css.movieListSearch}>
+                <div><HeaderPreview onSearchClick={handleSearchClick}/></div>
                 <div>
                     {
                         movies && movies.map(value => <MovieListCard key={value.id} movie={value}/>)
                     }
                 </div>
                 <div>
-                    <Pagination handlePrevPage={handlePrevPage} handleNextPage={handleNextPage}/>
+                    <Pagination  onPageChange={handlePageChange}/>
                 </div>
             </div>
 

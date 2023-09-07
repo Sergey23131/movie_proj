@@ -1,3 +1,44 @@
-.HeaderPreview{
+.HeaderPreview {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 90%;
+    overflow: hidden;
+}
+.HeaderPreview img {
+    margin-left: 10%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 90%; /* Уменьшим ширину картинки на 10% */
+    height: 90%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    border: 3px solid #ffffff;
+    box-sizing: border-box;
+}
+
+.HeaderPreview img.fade {
+    opacity: 1;
+}
+
+.Caption {
+    text-align: center;
+    position: absolute;
+    margin-left: 10%;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+
+.CaptionText {
+    font-size: 50px;
+    font-weight: bold;
     color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
 }

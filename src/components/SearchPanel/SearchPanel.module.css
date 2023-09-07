@@ -1,21 +1,26 @@
-.searchInput {
+
+/* Стили для input внутри .movie-page */
+.moviePage input[type="text"] {
+    padding: 15px 25px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
     width: 500px;
-    font-size: 17px;
-    padding: 5px 10px;
-    flex-grow: 10;
-    border-radius: 10px;
-    border: 1px solid grey;
 }
 
-.searchInput:active {
-    border: 1px solid black;
-    border-radius: 10px;
+/* Стили для button внутри .movie-page */
+.moviePage button {
+    background-color: #000000;
+    color: white;
+    margin-left: 20px;
+
+    border-radius: 30px;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid #ffffff;
 }
 
-.white {
-    background-color: #ccced7;
-}
-.dark {
-    background-color: #373752;
-    color: #81c1f3;
+.moviePage button:hover {
+    background-color: #383da8;
 }
