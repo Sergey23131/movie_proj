@@ -1,16 +1,15 @@
-
-import React, { FC, useEffect, useState } from "react";
+import React, {FC, useEffect, useState} from "react";
 import css from './Pagination.module.css';
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { movieActions } from "../../redux";
-import { IGenres } from "../../interfaces";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieActions} from "../../redux";
+import {IGenres} from "../../interfaces";
 
 interface IProps {
     onPageChange: (page: number) => void;
 }
 
-const Pagination: FC<IProps> = ({ onPageChange }) => {
-    const { page, total_pages } = useAppSelector(state => state.movieReducer);
+const Pagination: FC<IProps> = ({onPageChange}) => {
+    const {page, total_pages, style} = useAppSelector(state => state.movieReducer);
 
     // Вычисляем начальную и конечную страницу для показа
     let startPage: number;
@@ -30,10 +29,10 @@ const Pagination: FC<IProps> = ({ onPageChange }) => {
     }
 
     // Генерируем список страниц для отображения
-    const pages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
+    const pages = Array.from({length: endPage - startPage + 1}, (_, i) => startPage + i);
 
     return (
-        <div className={css.pagination}>
+        <div className={`${css.pagination} ${style ? css.paginationLight : css.paginationDark}`}>
             <button onClick={() => onPageChange(page - 1)} disabled={page === 1} className={css.paginationButton}>
                 {"<<"}
             </button>
@@ -56,4 +55,4 @@ const Pagination: FC<IProps> = ({ onPageChange }) => {
     );
 }
 
-export { Pagination };
+export {Pagination};

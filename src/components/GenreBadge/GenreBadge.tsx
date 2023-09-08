@@ -1,6 +1,7 @@
 import React, {Component, FC, useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genresActions} from "../../redux";
+import css from './GanreBadge.module.css'
 
 interface IProps {
     genresId: number[];
@@ -9,6 +10,8 @@ interface IProps {
 
 const GenreBadge: FC<IProps> = ({genresId}) => {
     const {genres} = useAppSelector(state => state.genresReducer);
+    const {style} = useAppSelector(state => state.movieReducer);
+
     const dispatch = useAppDispatch();
 
 
@@ -21,11 +24,12 @@ const GenreBadge: FC<IProps> = ({genresId}) => {
 
 
     return (
-        <div>
+        <div className={style ? css.GenreBadgeWrapperLight : css.GenreBadgeWrapperDark}>
             {filteredGenres && filteredGenres.map(genre => (
-                <div key={genre.id}>
+                <div key={genre.id} className={style ? css.GenreBadgeNameLight : css.GenreBadgeNameDark}>
                     {genre.name}
                 </div>
+
             ))}
 
         </div>

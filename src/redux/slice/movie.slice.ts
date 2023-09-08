@@ -10,7 +10,7 @@ interface IState {
     movie: IMovie | null,
     movieVideo: IVideo,
     errors: IError,
-    trigger: boolean,
+    style: boolean,
     page: number,
     total_pages: number
 
@@ -21,7 +21,7 @@ const initialState: IState = {
     movieVideo: null,
     movie: null,
     errors: null,
-    trigger: false,
+    style: false,
     page: 1,
     total_pages: 1
 
@@ -111,6 +111,14 @@ const slice = createSlice({
         },
         prevPage: (state) => {
             state.page = Math.max(1, state.page - 1);
+        },
+        stylePage: (state): void => {
+            if (state.style === true) {
+                state.style = false;
+            } else {
+                state.style = true;
+
+            }
         },
 
     },

@@ -10,7 +10,7 @@ import {Pagination} from "../Pagination";
 
 
 const MovieList: FC = () => {
-    const {movies, page, total_pages} = useAppSelector(state => state.movieReducer);
+    const {movies, page, total_pages,style} = useAppSelector(state => state.movieReducer);
     const {genres} = useAppSelector(state => state.genresReducer);
     const [genreId, setGenreId] = useState<number | null>(null);
     const [search, setSearch] = useState<string | null>(null);
@@ -56,7 +56,7 @@ const MovieList: FC = () => {
 
     return (
         <div className={css.movieListWrapper}>
-            <div className={css.movieGenres}>
+            <div className={style? css.movieGenresLight: css.movieGenresDark}>
                 {
                     genres && genres.map(value => <GenresList key={value.id} genre={value}
                                                               onGenreClick={handleGenreClick}/>)
@@ -65,9 +65,7 @@ const MovieList: FC = () => {
             <div className={css.movieListSearch}>
                 <div><HeaderPreview onSearchClick={handleSearchClick}/></div>
                 <div>
-                    {
-                        movies && movies.map(value => <MovieListCard key={value.id} movie={value}/>)
-                    }
+                    {movies && movies.map(value => <MovieListCard key={value.id} movie={value}/>)}
                 </div>
                 <div>
                     <Pagination  onPageChange={handlePageChange}/>

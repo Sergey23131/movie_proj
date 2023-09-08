@@ -1,6 +1,7 @@
 import React, {FC, useState, useEffect} from "react";
 import css from './HeaderPreview.module.css';
 import {SearchPanel} from "../SearchPanel";
+import {useAppSelector} from "../../hooks";
 
 interface IProps {
     onSearchClick: (value: string) => void;
@@ -11,6 +12,8 @@ interface IProps {
 }
 
 const HeaderPreview: FC<IProps> = ({onSearchClick}) => {
+    const {style} = useAppSelector(state => state.movieReducer);
+
     const [currentImage, setCurrentImage] = useState(0);
     const images = [
         '/images/img.png',
@@ -36,7 +39,7 @@ const HeaderPreview: FC<IProps> = ({onSearchClick}) => {
     };
 
     return (
-        <div className={css.HeaderPreview}>
+        <div className={style ? css.HeaderPreviewLight : css.HeaderPreviewDark}>
             {images.map((image, index) => (
                 <img
                     key={index}

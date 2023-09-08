@@ -1,3 +1,4 @@
+/* Стили для общего контейнера заголовка */
 .headerWrapper {
     position: fixed;
     top: 0;
@@ -5,45 +6,92 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 25px 20px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.15s, color 0.15s;
     z-index: 100;
+    /* Горизонтальное смещение 0px, вертикальное смещение 5px, радиус размытия 10px, цвет тени */
+
 }
 
+/* Стили для светлой темы */
 .light {
     background-color: white;
     color: black;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Стили для темной темы */
 .dark {
     background-color: black;
     color: white;
+    box-shadow: 0px 3px 10px rgba(246, 246, 246, 0.3);
 }
 
-.logoLink {
+/* Стили для логотипа в светлой теме */
+.logoLinkLight {
     text-decoration: none;
     font-size: 40px;
     font-weight: bold;
     color: black;
 }
 
-.lightModeButton {
+/* Стили для логотипа в темной теме */
+.logoLinkDark {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Стили для кнопки режима в светлой теме */
+.lightModeButtonLight {
+    margin-left: 30px;
+
     font-size: 20px;
+    padding: 10px 15px;
     background-color: transparent;
     color: inherit;
-    border: none;
     cursor: pointer;
-    transition: color 0.3s;
+    border: 1px black solid;
+    font-weight: bold;
+
+    border-radius: 20px; /* Радиус границы */
+}
+/* Стили для кнопки режима в темной теме */
+.lightModeButtonDark {
+    margin-left: 30px;
+
+    font-size: 20px;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    border: 1px white solid;
+    font-weight: bold;
+
+    border-radius: 20px; /* Радиус границы */
 }
 
-.userLink {
-    text-decoration: none;
-    margin-left: auto;
+/* Стили для элемента Movies List (можно добавить под ваше описание) */
+.moviesList {
+    font-size: 20px;
+    color: inherit; /* Наследовать цвет текста от родительского элемента */
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 30px;
+
+}
+.headerImg{
+    margin-left: 800px;
 }
 
-.userImage {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.userImage{
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+
+.dark .AppMain{
+    background-color: white;
 }

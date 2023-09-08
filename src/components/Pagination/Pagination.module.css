@@ -5,26 +5,50 @@
 }
 .pagination button  {
     padding: 10px 20px; /* Размер отступов */
-    background-color: black; /* Фон кнопки */
-    border: 1px solid #ccc; /* Граница кнопки */
+
     margin: 2px; /* Отступы между кнопками */
-    color: white;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease; /* Плавные изменения при наведении */
 }
 
-.pagination button:hover {
+.paginationDark button {
+    background-color: black; /* Фон кнопки */
+    border: 1px solid #ccc; /* Граница кнопки */
+    color: white;
+}
+
+.paginationDark button:hover {
     background-color: #ffffff; /* Фон при наведении */
     color: #000000; /* Цвет текста при наведении */
 }
 
 /* Стили для выбранной страницы */
-.pagination button.currentPage {
+.paginationDark button.currentPage {
     background-color: #ffffff; /* Цвет фона для текущей страницы */
     color: #000000; /* Цвет текста для текущей страницы */
     border: 3px solid #455767; /* Граница для текущей страницы */
 }
 
+
+.paginationLight button {
+    background-color: #ffffff; /* Фон кнопки */
+    border: 1px solid #070606; /* Граница кнопки */
+    color: #000000;
+}
+
+
+
+.paginationLight button:hover {
+    background-color: #000000; /* Фон при наведении */
+    color: #ffffff; /* Цвет текста при наведении */
+}
+
+/* Стили для выбранной страницы */
+.paginationLight button.currentPage {
+    background-color: #000000; /* Цвет фона для текущей страницы */
+    color: #ffffff; /* Цвет текста для текущей страницы */
+    border: 3px solid #455767; /* Граница для текущей страницы */
+}
 /* Стили для кнопки "Предыдущая страница" */
 .pagination button.prevPage {
     margin-right: 10px; /* Отступ справа */

@@ -2,33 +2,39 @@ import {useState} from "react";
 import {Link} from "react-router-dom";
 import {SearchPanel} from "../SearchPanel";
 import css from './Header.module.css';
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieActions} from "../../redux";
 
 
 const Header = () => {
-    const [isLightMode, setIsLightMode] = useState(true);
+    const {style} = useAppSelector(state => state.movieReducer);
+// МОЖНО В СТИЛЯХ  сделать как тут что бы уменьшить количество кода в ксс
+    const dispatch = useAppDispatch();
 
     const toggleTheme = () => {
-        setIsLightMode(prevMode => !prevMode);
+        dispatch(movieActions.stylePage());
     };
     const reloadPage = () => {
         window.location.href = "/movies";
+
     };
 
-    const headerClassName = isLightMode ? css.light : css.dark;
 
     return (
-        <div className={`${css.headerWrapper} ${headerClassName}`}>
-            <div className={css.logoLink} onClick={reloadPage}>KOMO FILMS</div>
-
-            <div onClick={reloadPage}>
+        <div className={`${css.headerWrapper} ${style ? css.light : css.dark}`}>
+            <div className={style ? css.logoLinkLight : css.logoLinkDark} onClick={reloadPage}>KOMO FILMS</div>
+            <div className={css.moviesList} onClick={reloadPage}>
                 Movies List
             </div>
-            <button className={css.lightModeButton} onClick={toggleTheme}>
-                {isLightMode ? 'Dark Mode' : 'Light Mode'}
+            <button className={style ? css.lightModeButtonLight : css.lightModeButtonDark} onClick={toggleTheme}>
+                {style ? 'Dark Mode' : 'Light Mode'}
             </button>
-            <Link to="userPage" className={css.userLink}>
-                <img src="" alt="userPage" className={css.userImage}/>
-            </Link>
+            <div className={css.headerImg}>
+                <Link to="userPage" className={css.userLink}>
+                    <img src="/images/img_3.png" alt="userPage" className={css.userImage}/>
+                </Link>
+            </div>
+
         </div>
     );
 };

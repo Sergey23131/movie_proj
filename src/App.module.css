@@ -3,6 +3,12 @@ body, html {
     padding: 0;
 }
 
-.AppMain{
+.AppMainDark{
     background-color: #090808;
+}
+
+
+
+.AppMainLight{
+    background-color: #ffffff;
 }
