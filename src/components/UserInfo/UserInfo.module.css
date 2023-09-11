@@ -1,18 +1,26 @@
 
 .userInfoContainer {
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #000000;
+    font-size: 20px;
+    padding-top: 50px;
+
 }
 
 .userInfoCard {
-    background-color: #fff;
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    background-color: #000000;
+    width: 1000px;
+    height: 500px;
+
+}
+
+.userImage {
+height: 200px;
+    width: 200px;
 }
 
 .userInfoContent {
@@ -28,15 +36,12 @@
     border: 1px solid #ddd;
 }
 
+
 .userInfoDetails {
     display: flex;
     flex-direction: column;
 }
 
-.userInfoName {
-    font-size: 18px;
-    font-weight: bold;
-}
 
 .userInfoInfo {
     margin-top: 5px;

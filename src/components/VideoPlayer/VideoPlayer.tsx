@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const VideoPlayer: FC<IProps> = ({videoInfo}) => {
-    const keyOfFirstVideo = videoInfo.results[0]?.key;
+    const keyOfFirstVideo = videoInfo.results[1]?.key;
 
 
     return (

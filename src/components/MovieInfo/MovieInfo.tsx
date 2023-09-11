@@ -18,7 +18,7 @@ const MovieInfo: FC<IProps> = ({movieInfo}) => {
 
     const {
         id,
-        backdrop_path,
+        poster_path,
         genres,
         original_language,
         original_title,
@@ -40,36 +40,27 @@ const MovieInfo: FC<IProps> = ({movieInfo}) => {
 
         return (
             <div className={css.movieInfoWrapper}>
-                <p>{original_title}</p>
                 <div className={css.movieInfoBox1}>
-                    <div className={css.imageBox2}>{<img src={imgBuilder(backdrop_path)} alt="Movie poster"/>}</div>
+                    <div className={css.imageBox2}>{<img src={imgBuilder(poster_path)} alt="Movie poster" />}</div>
+
                     <div className={css.movieInfoBox3}>
-                        <div>
-                            Genres: {genres.map((value: IGenres) => (
-                            <div key={value.id}>{value.name}</div>
-                        ))}
-                        </div>
-
-                        <div>
-                            Vote Average:
-                            {roundedNumber}/10
-                            {vote_average && <StarsRating rating={vote_average} />}
-                        </div>
-
+                        <p className={css.movieTitle}>{original_title} </p>
+                        <p>Release Date: {release_date}</p>
                         <p>Original Language: {original_language} </p>
 
-                        <p>Release Date: {release_date}</p>
+                        <div className={css.ratingWrapper}>
+                            {vote_average && <StarsRating rating={vote_average}/>}{roundedNumber}
+                        </div>
 
-                        <p>Overview:{overview}</p>
-                      {
-                          movieVideo && <VideoPlayer videoInfo={movieVideo}/>
-
-                      }
-
+                        <div className={css.movieInfoGenres}>
+                            Genres: {genres.map((value: IGenres) => (
+                            <div key={value.id} className={css.movieOneGenre}>{value.name}</div>
+                        ))}
+                        </div>
+                        <p className={css.movieInfoOverview}>Overview: {overview}</p>
+                        {movieVideo && <VideoPlayer videoInfo={movieVideo} />}
                     </div>
                 </div>
-
-
             </div>
         );
 

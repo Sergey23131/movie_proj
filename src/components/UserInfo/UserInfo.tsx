@@ -16,19 +16,18 @@ const UserInfo = () => {
         <div className={css.userInfoContainer}>
             <div className={css.userInfoCard}>
                 <div className={css.userInfoContent}>
-                    <img
-                        src="https://via.placeholder.com/150"
-                        alt="User"
-                        className={css.userInfoPhoto}
-                    />
+                    <img src="/images/img_3.png" alt="userPage" className={css.userImage}/>
+
                     <div className={css.userInfoDetails}>
-                        <div className={css.userInfoName}>John Doe</div>
+                        <div className={css.userInfoName}>Name:John Doe</div>
                         <div className={css.userInfoInfo}>
                             Location: New York
                         </div>
                         <div className={css.userInfoInfo}>
-                            Phone: +1 123-456-7890
+                            Date of Registration: 01.01.2020
                         </div>
+
+
                     </div>
                 </div>
                 <div className={css.userInfoTabs}>

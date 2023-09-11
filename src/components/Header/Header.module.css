@@ -33,6 +33,8 @@
     font-size: 40px;
     font-weight: bold;
     color: black;
+    cursor: pointer;
+
 }
 
 /* Стили для логотипа в темной теме */
@@ -41,6 +43,8 @@
     font-size: 40px;
     font-weight: bold;
     color: white;
+    cursor: pointer;
+
 }
 
 /* Стили для кнопки режима в светлой теме */

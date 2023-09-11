@@ -1,3 +1,64 @@
 .movieInfoWrapper{
     color: white;
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-bottom: 20px;
 }
+
+
+.movieInfoBox3{
+    padding-left: 40px;
+    font-size: 20px;
+}
+
+
+.movieTitle{
+    padding-top: 15px;
+    margin-bottom: 0px;
+    font-size: 40px;
+    font-weight: bold;
+
+
+}
+
+.movieInfoGenres{
+    display: flex;
+}
+
+.movieOneGenre{
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+    text-decoration: underline;
+
+
+}
+
+.movieInfoOverview{
+    font-size: 20px;
+}
+
+.titleWrapper{
+    display: flex;
+}
+.ratingWrapper{
+    display: flex;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.movieInfoBox1{
+    display: flex;
+}
+
+.imageBox2{
+    margin-top:60px;
+    border: 1px solid #ffffff;
+    height: 600px;
+
+}
+
+.roundedNumberWrapper{
+    position: absolute;
+}
+
