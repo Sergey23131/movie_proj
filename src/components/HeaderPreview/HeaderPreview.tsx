@@ -1,7 +1,10 @@
 import React, {FC, useState, useEffect} from "react";
-import css from './HeaderPreview.module.css';
-import {SearchPanel} from "../SearchPanel";
 import {useAppSelector} from "../../hooks";
+
+import {SearchPanel} from "../SearchPanel";
+
+import css from './HeaderPreview.module.css';
+
 
 interface IProps {
     onSearchClick: (value: string) => void;

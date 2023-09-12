@@ -1,6 +1,7 @@
 import {FC} from "react";
-import css from './StarRating.module.css';
 import StarRatings from "react-star-ratings";
+
+import css from './StarRating.module.css';
 
 interface IProps {
     rating: number;

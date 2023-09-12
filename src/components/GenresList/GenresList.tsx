@@ -1,7 +1,9 @@
-import css from './GenresList.module.css'
 import {useAppSelector} from "../../hooks";
 import {FC} from "react";
+
 import {IGenres} from "../../interfaces";
+
+import css from './GenresList.module.css'
 
 interface IProps {
     genre: IGenres;

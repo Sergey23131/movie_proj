@@ -1,6 +1,7 @@
-import css from './UserInfo.module.css'
 import {useState} from "react";
 import {useAppSelector} from "../../hooks";
+
+import css from './UserInfo.module.css'
 
 
 const UserInfo = () => {

@@ -1,9 +1,12 @@
-import {IError, IMovie} from "../../interfaces";
 import {createAsyncThunk, createSlice, isFulfilled, isRejectedWithValue} from "@reduxjs/toolkit";
 import {movieService} from "../../services";
-import {AxiosError} from "axios";
-import {IVideo} from "../../interfaces";
 import {videoService} from "../../services";
+
+import {AxiosError} from "axios";
+
+import {IError, IMovie,IVideo} from "../../interfaces";
+
+
 
 interface IState {
     movies: IMovie[],

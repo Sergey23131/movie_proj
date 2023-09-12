@@ -1,10 +1,15 @@
 import {FC} from "react";
-import {IMovie} from "../../interfaces";
-import {StarsRating} from "../StarsRating";
+
 import {Link} from "react-router-dom";
-import {GenreBadge} from "../GenreBadge";
-import css from './MovieListCard.module.css';
 import {useAppSelector} from "../../hooks";
+
+import {GenreBadge} from "../GenreBadge";
+import {StarsRating} from "../StarsRating";
+
+import {IMovie} from "../../interfaces";
+
+import css from './MovieListCard.module.css';
+
 
 interface IProps {
     movie: IMovie;

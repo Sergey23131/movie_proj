@@ -1,10 +1,13 @@
 import React, {FC, useEffect} from "react";
-import {IGenres, IMovie} from "../../interfaces";
-import css from './MovieInfo.module.css';
-import {StarsRating} from "../StarsRating";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux";
+
+import {IGenres, IMovie} from "../../interfaces";
+
 import {VideoPlayer} from "../VideoPlayer";
+import {StarsRating} from "../StarsRating";
+
+import css from './MovieInfo.module.css';
 
 interface IProps {
     movieInfo: IMovie;

@@ -1,14 +1,15 @@
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {FC, useEffect, useState} from "react";
-import {MovieListCard} from "../MoviesListCard";
 import {Outlet} from "react-router-dom";
 import {movieActions} from "../../redux";
-import css from './MovieList.module.css';
+
+import {MovieListCard} from "../MoviesListCard";
 import {GenresList} from "../GenresList";
 import {HeaderPreview} from "../HeaderPreview";
 import {Pagination} from "../Pagination";
 import {Loading} from "../Loading";
 
+import css from './MovieList.module.css';
 
 const MovieList: FC = () => {
     const {movies, page, total_pages, style, isLoading} = useAppSelector(state => state.movieReducer);

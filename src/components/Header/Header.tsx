@@ -1,7 +1,8 @@
 import {Link} from "react-router-dom";
-import css from './Header.module.css';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux";
+
+import css from './Header.module.css';
 
 
 const Header = () => {

@@ -1,6 +1,7 @@
 import React, {FC} from "react";
-import css from './Pagination.module.css';
 import {useAppSelector} from "../../hooks";
+
+import css from './Pagination.module.css';
 
 
 interface IProps {
