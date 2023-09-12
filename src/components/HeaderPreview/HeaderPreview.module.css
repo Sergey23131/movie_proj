@@ -1,4 +1,4 @@
-.HeaderPreviewDark {
+.HeaderPreview{
     position: relative;
     display: flex;
     justify-content: center;
@@ -6,51 +6,36 @@
     height: 600px;
     width: 90%;
     overflow: hidden;
+}
+
+.HeaderPreview img{
+    margin-left: 10%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    box-sizing: border-box;
+
 }
 .HeaderPreviewDark img {
-    margin-left: 10%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 90%; /* Уменьшим ширину картинки на 10% */
-    height: 90%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+
     border: 3px solid #ffffff;
-    box-sizing: border-box;
+
 }
 
-.HeaderPreviewDark img.fade {
+.HeaderPreview img.fade {
     opacity: 1;
 }
 
-.HeaderPreviewLight {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
-    width: 90%;
-    overflow: hidden;
-}
+
 .HeaderPreviewLight img {
-    margin-left: 10%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 90%; /* Уменьшим ширину картинки на 10% */
-    height: 90%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
     border: 3px solid #000000;
-    box-sizing: border-box;
 }
 
-.HeaderPreviewLight img.fade {
-    opacity: 1;
-}
 
 .Caption {
     text-align: center;

@@ -23,7 +23,7 @@ const MovieListCard: FC<IProps> = ({movie}) => {
 
 
     return (
-        <div className={style ? css.movieListCardWrapperLight : css.movieListCardWrapperDark}>
+        <div className={`${css.movieListCardWrapper} ${style ? css.movieListCardWrapperLight : css.movieListCardWrapperDark}`}>
             <Link to={`/movies/${id}`} className={style ? css.movieCardLight : css.movieCardDark}>
                 <div className={css.movieListCardTop}>
                     <img src={imgBuilder(poster_path)} alt="Movie poster" className={css.movieCardImg}/>

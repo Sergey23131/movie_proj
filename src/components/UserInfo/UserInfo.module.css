@@ -1,23 +1,19 @@
-
-.userInfoContainerLight {
-    color: #000000;
+.userInfoContainer{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ffffff;
     font-size: 20px;
+}
+.userInfoContainerLight {
+    color: #000000;
+    background-color: #ffffff;
+
 }
 
 .userInfoContainerDark {
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #000000;
-    font-size: 20px;
-
 }
 
 .userInfoTitle{

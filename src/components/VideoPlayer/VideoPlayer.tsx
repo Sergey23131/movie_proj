@@ -1,6 +1,5 @@
-import {FC, useState} from "react";
-import css from "../UserInfo/UserInfo.module.css";
-import {MovieInfo} from "../MovieInfo";
+import {FC} from "react";
+
 import {IVideo} from "../../interfaces";
 
 

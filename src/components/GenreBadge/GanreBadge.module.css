@@ -1,34 +1,29 @@
-.GenreBadgeWrapperDark{
+.GenreBadgeWrapper {
     display: flex;
+    flex-wrap: wrap;
+
+}
+
+.GenreBadgeWrapperDark {
     color: white;
-    flex-wrap: wrap; /* Разрешает перенос элементов на новую строку */
+}
 
+.GenreBadgeWrapperLight {
+    color: #000000;
+}
 
+.GenreBadgeName {
+    margin-top: 3px;
+    padding: 5px 7px;
+    border-radius: 20px;
+    margin-right: 4px;
 }
 
 .GenreBadgeNameDark {
-    margin-top: 3px;
-    border: 1px solid #ffffff; /* Граница для изображения */
-    padding: 5px 7px ;
-    border-radius: 20px;
-    margin-right: 4px;
-
+    border: 1px solid #ffffff;
 }
 
-
-.GenreBadgeWrapperLight{
-    display: flex;
-    color: #000000;
-    flex-wrap: wrap; /* Разрешает перенос элементов на новую строку */
-
-
-
-}
 
 .GenreBadgeNameLight {
-    margin-top: 3px;
-    border: 1px solid #000000; /* Граница для изображения */
-    padding: 5px 7px ;
-    border-radius: 20px;
-    margin-right: 4px;
+    border: 1px solid #000000;
 }

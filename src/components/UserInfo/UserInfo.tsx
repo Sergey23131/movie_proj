@@ -22,7 +22,7 @@ const UserInfo = () => {
     };
 
     return (
-        <div className={style ? css.userInfoContainerLight : css.userInfoContainerDark}>
+        <div className={`${css.userInfoContainer} ${style ? css.userInfoContainerLight : css.userInfoContainerDark}`}>
             <div className={css.userInfoCard}>
                 <div className={css.userInfoTitle}><p>Fake user card</p></div>
                 <div className={css.userInfoContent}>

@@ -7,25 +7,26 @@ import css from './MovieList.module.css';
 import {GenresList} from "../GenresList";
 import {HeaderPreview} from "../HeaderPreview";
 import {Pagination} from "../Pagination";
+import { Loading } from "../Loading";
 
 
 const MovieList: FC = () => {
-    const {movies, page, total_pages,style} = useAppSelector(state => state.movieReducer);
+    const {movies, page, total_pages, style, isLoading} = useAppSelector(state => state.movieReducer);
     const {genres} = useAppSelector(state => state.genresReducer);
     const [genreId, setGenreId] = useState<number | null>(null);
     const [search, setSearch] = useState<string | null>(null);
-    const [error, setError] = useState<string | null>(null);
 
 
     const dispatch = useAppDispatch();
 
+
     useEffect(() => {
         const pageStr = page.toString();
 
-        if (genreId) {
-            dispatch(movieActions.getByGenre({id: genreId, currentPage: pageStr}));
-        } else if (search) {
+        if (search) {
             dispatch(movieActions.getBySearch({params: search, currentPage: pageStr}));
+        } else if (genreId) {
+            dispatch(movieActions.getByGenre({id: genreId, currentPage: pageStr}));
         } else {
             dispatch(movieActions.getAll(pageStr)).then();
         }
@@ -39,25 +40,13 @@ const MovieList: FC = () => {
         setSearch(value);
     }
 
-    const handlePrevPage = () => {
-        if (page > 1) {
-            dispatch(movieActions.changePage(page - 1));// Изменяем текущую страницу в Redux store
-        }
-    };
-
-    const handleNextPage = () => {
-        if (page < total_pages) {
-            dispatch(movieActions.changePage(page + 1)); // Изменяем текущую страницу в Redux store
-        }
-    };
-
     const handlePageChange = (newPage: number) => {
         dispatch(movieActions.changePage(newPage));
     };
 
     return (
         <div className={css.movieListWrapper}>
-            <div className={style? css.movieGenresLight: css.movieGenresDark}>
+            <div className={style ? css.movieGenresLight : css.movieGenresDark}>
                 {
                     genres && genres.map(value => <GenresList key={value.id} genre={value}
                                                               onGenreClick={handleGenreClick}/>)
@@ -65,14 +54,19 @@ const MovieList: FC = () => {
             </div>
             <div className={css.movieListSearch}>
                 <div><HeaderPreview onSearchClick={handleSearchClick}/></div>
-                <div className={style? css.moviesListContLight: css.moviesListContDark}>
-                    {movies.length > 0 ? (
-                        movies.map((value) => <MovieListCard key={value.id} movie={value} />)
+                <div className={style ? css.moviesListContLight : css.moviesListContDark}>
+                    {isLoading ? (
+                        <Loading />
                     ) : (
-                        <p className={css.warningSearch}>No data. You entered an incorrect movie name or the movie does not exist.</p>
-                    )}                </div>
+                        movies.length > 0 ? (
+                            movies.map((value) => <MovieListCard key={value.id} movie={value} />)
+                        ) : (
+                            <p className={css.warningSearch}>No data. You entered an incorrect movie name or the movie does not exist.</p>
+                        )
+                    )}
+                </div>
                 <div>
-                    <Pagination  onPageChange={handlePageChange}/>
+                    <Pagination onPageChange={handlePageChange}/>
                 </div>
             </div>
 

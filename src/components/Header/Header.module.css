@@ -9,93 +9,77 @@
     padding: 25px 20px;
     transition: background-color 0.15s, color 0.15s;
     z-index: 100;
-    /* Горизонтальное смещение 0px, вертикальное смещение 5px, радиус размытия 10px, цвет тени */
 
 }
 
 /* Стили для светлой темы */
-.light {
+.headerWrapperLight {
     background-color: white;
     color: black;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Стили для темной темы */
-.dark {
+.headerWrapperDark {
     background-color: black;
     color: white;
     box-shadow: 0px 3px 10px rgba(246, 246, 246, 0.3);
 }
 
-/* Стили для логотипа в светлой теме */
+.logoLink {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .logoLinkLight {
-    text-decoration: none;
-    font-size: 40px;
-    font-weight: bold;
     color: black;
-    cursor: pointer;
-
 }
 
-/* Стили для логотипа в темной теме */
 .logoLinkDark {
-    text-decoration: none;
-    font-size: 40px;
-    font-weight: bold;
     color: white;
-    cursor: pointer;
-
 }
 
-/* Стили для кнопки режима в светлой теме */
+.lightModeButton {
+    margin-left: 30px;
+    font-size: 20px;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
 .lightModeButtonLight {
-    margin-left: 30px;
-
-    font-size: 20px;
-    padding: 10px 15px;
-    background-color: transparent;
-    color: inherit;
-    cursor: pointer;
     border: 1px black solid;
-    font-weight: bold;
-
-    border-radius: 20px; /* Радиус границы */
 }
-/* Стили для кнопки режима в темной теме */
+
 .lightModeButtonDark {
-    margin-left: 30px;
-
-    font-size: 20px;
-    padding: 10px 15px;
-    background-color: transparent;
-    color: inherit;
-    cursor: pointer;
     border: 1px white solid;
-    font-weight: bold;
-
-    border-radius: 20px; /* Радиус границы */
 }
 
-/* Стили для элемента Movies List (можно добавить под ваше описание) */
 .moviesList {
     font-size: 20px;
-    color: inherit; /* Наследовать цвет текста от родительского элемента */
+    color: inherit;
     cursor: pointer;
     font-weight: bold;
     margin-left: 30px;
 
 }
-.headerImg{
+
+.headerImg {
     margin-left: 800px;
 }
 
-.userImage{
+.userImage {
 
     width: 50px;
     height: 50px;
     border-radius: 50px;
 }
 
-.dark .AppMain{
+.dark .AppMain {
     background-color: white;
 }

@@ -12,9 +12,10 @@
     margin-bottom: 1%;
 }
 
+
 .movieGenresDark {
     padding-top: 120px;
-    border-right: 1px solid white; /* Граница справа */
+    border-right: 1px solid white;
 
 
 }
@@ -22,7 +23,7 @@
 
 .movieGenresLight {
     padding-top: 120px;
-    border-right: 1px solid #000000; /* Граница справа */
+    border-right: 1px solid #000000;
 
 
 }

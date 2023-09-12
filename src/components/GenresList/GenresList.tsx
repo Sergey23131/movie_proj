@@ -19,7 +19,7 @@ const GenresList: FC<IProps> = ({genre, onGenreClick}) => {
 
     return (
         <div className={css.GenresListWrapper}>
-            <div onClick={genreFilter} className={style?css.GenresListNameLight:css.GenresListNameDark}>{name}</div>
+            <div onClick={genreFilter} className={`${css.GenresListName} ${style ? css.GenresListNameLight : css.GenresListNameDark}`}>{name}</div>
         </div>
     );
 };

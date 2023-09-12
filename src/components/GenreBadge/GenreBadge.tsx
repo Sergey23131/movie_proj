@@ -24,9 +24,9 @@ const GenreBadge: FC<IProps> = ({genresId}) => {
 
 
     return (
-        <div className={style ? css.GenreBadgeWrapperLight : css.GenreBadgeWrapperDark}>
+        <div className={`${css.GenreBadgeWrapper} ${style ? css.GenreBadgeWrapperLight : css.GenreBadgeWrapperDark}`}>
             {filteredGenres && filteredGenres.map(genre => (
-                <div key={genre.id} className={style ? css.GenreBadgeNameLight : css.GenreBadgeNameDark}>
+                <div key={genre.id} className={`${css.GenreBadgeName} ${style ? css.GenreBadgeNameLight : css.GenreBadgeNameDark}`}>
                     {genre.name}
                 </div>
 

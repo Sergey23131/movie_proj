@@ -13,7 +13,7 @@ interface IProps {
 }
 
 const MovieInfo: FC<IProps> = ({movieInfo}) => {
-   const {movieVideo} = useAppSelector(state => state.movieReducer);
+   const {movieVideo,style} = useAppSelector(state => state.movieReducer);
     const dispatch = useAppDispatch();
 
     const {
@@ -39,9 +39,9 @@ const MovieInfo: FC<IProps> = ({movieInfo}) => {
 
 
         return (
-            <div className={css.movieInfoWrapper}>
+            <div className={`${css.movieInfoWrapper} ${style ? css.movieInfoWrapperLight : css.movieInfoWrapperDark}`}>
                 <div className={css.movieInfoBox1}>
-                    <div className={css.imageBox2}>{<img src={imgBuilder(poster_path)} alt="Movie poster" />}</div>
+                    <div className={`${css.imageBox2} ${style ? css.imageBox2Light : css.imageBox2Dark}`}>{<img src={imgBuilder(poster_path)} alt="Movie poster" />}</div>
 
                     <div className={css.movieInfoBox3}>
                         <p className={css.movieTitle}>{original_title} </p>

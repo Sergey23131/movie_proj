@@ -39,7 +39,7 @@ const HeaderPreview: FC<IProps> = ({onSearchClick}) => {
     };
 
     return (
-        <div className={style ? css.HeaderPreviewLight : css.HeaderPreviewDark}>
+        <div className={`${css.HeaderPreview} ${style ? css.HeaderPreviewLight : css.HeaderPreviewDark}`}>
             {images.map((image, index) => (
                 <img
                     key={index}

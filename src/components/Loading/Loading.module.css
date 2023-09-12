@@ -1,5 +1,5 @@
 .loading {
-    position: absolute;
+    margin-bottom: 40px;
     top: 0;
     left: 0;
     width: 100%;
@@ -11,4 +11,12 @@
 
     font-size: 24px;
     font-weight: bold;
+}
+
+.loadingDark {
+    color: white;
+}
+
+.loadingLight {
+    color: black;
 }

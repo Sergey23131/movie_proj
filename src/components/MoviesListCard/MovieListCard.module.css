@@ -1,59 +1,44 @@
 
-
-.movieListCardWrapperDark {
+.movieListCardWrapper{
     display: inline-block;
-    width: calc(25% - 25px); /* 20% ширины родительского контейнера минус отступы */
+    width: calc(25% - 25px);
     height: 620px;
     margin: 10px;
     padding: 10px 20px 10px 20px;
-    border: 1px solid #ddd;
     text-decoration: none;
-    box-sizing: border-box; /* Учитываем границу и padding в расчетах ширины */
-    overflow: hidden; /* Скрываем избыточный текст */
-    vertical-align: top; /* Выравнивание по верхнему краю */
+    box-sizing: border-box;
+    overflow: hidden;
+    vertical-align: top;
     background-color: #333333;
     border-radius: 10px;
-    color: white;
     transition: box-shadow 0.1s ease-in-out;
 }
-
-.movieListCardWrapperLight {
-    display: inline-block;
-    width: calc(25% - 25px); /* 20% ширины родительского контейнера минус отступы */
-    height: 620px;
-    margin: 10px;
-    padding: 10px 20px 10px 20px;
-    border: 1px solid #000000;
-    text-decoration: none;
-    box-sizing: border-box; /* Учитываем границу и padding в расчетах ширины */
-    overflow: hidden; /* Скрываем избыточный текст */
-    vertical-align: top; /* Выравнивание по верхнему краю */
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    color: #000000;
-    transition: box-shadow 0.1s ease-in-out;
-
-}
-
 .movieListCardWrapperDark {
-    /* ... Ваши текущие стили ... */
-    transform: translateY(0); /* Начальное положение без поднятия */
+    border: 1px solid #ddd;
+    color: white;
+    transform: translateY(0);
     transition: transform 0.2s ease, box-shadow 0.1s ease-in-out;
 }
 
+.movieListCardWrapperLight {
+    border: 1px solid #000000;
+    background-color: #f1f1f1;
+    color: #000000;
+
+}
+
 .movieListCardWrapperDark:hover  {
-    transform: translateY(-10px) scale(1.02); /* Поднимаем и увеличиваем при наведении */
+    transform: translateY(-10px) scale(1.02);
     box-shadow: 0 0 10px 3px white;
 }
 
 .movieListCardWrapperLight {
-    /* ... Ваши текущие стили ... */
-    transform: translateY(0); /* Начальное положение без поднятия */
+    transform: translateY(0);
     transition: transform 0.2s ease, box-shadow 0.1s ease-in-out;
 }
 
 .movieListCardWrapperLight:hover  {
-    transform: translateY(-10px) scale(1.02); /* Поднимаем и увеличиваем при наведении */
+    transform: translateY(-10px) scale(1.02);
     box-shadow: 0 0 10px 3px white;
 }
 
@@ -75,11 +60,11 @@
 }
 
 .movieListCardWrapperDark:hover  {
-    box-shadow: 0 0 10px 3px white; /* Создание свечения (белая тень) при наведении */
+    box-shadow: 0 0 10px 3px white;
 }
 
 .movieListCardWrapperLight:hover  {
-    box-shadow: 0 0 10px 3px #000000; /* Создание свечения (белая тень) при наведении */
+    box-shadow: 0 0 10px 3px #000000;
 }
 
 .movieListCardTop{
@@ -93,14 +78,12 @@
 
 }
 
-/* Стили для изображения внутри movieCard */
 .movieCardImg {
-
     width: 100%;
-    height: 350px; /* Высота изображения внутри карточки */
+    height: 350px;
     display: block;
-    margin: 0 auto; /* Центрирование изображения */
-    border: 1px solid #090808; /* Граница для изображения */
+    margin: 0 auto;
+    border: 1px solid #090808;
 }
 
 
