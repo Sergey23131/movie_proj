@@ -1,4 +1,4 @@
-import {IError, IGenres, IMovie} from "../../interfaces";
+import {IError, IMovie} from "../../interfaces";
 import {createAsyncThunk, createSlice, isFulfilled, isRejectedWithValue} from "@reduxjs/toolkit";
 import {movieService} from "../../services";
 import {AxiosError} from "axios";

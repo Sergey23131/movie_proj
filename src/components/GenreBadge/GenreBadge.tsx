@@ -1,4 +1,4 @@
-import React, {Component, FC, useEffect} from 'react';
+import React, {FC, useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genresActions} from "../../redux";
 import css from './GanreBadge.module.css'

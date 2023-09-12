@@ -1,6 +1,5 @@
-import React, {FC, useEffect, useState} from "react";
-import {useAppDispatch, useAppSelector} from "../../hooks";
-import {movieActions} from "../../redux";
+import React, {FC, useState} from "react";
+
 import css from './SearchPanel.module.css'
 
 

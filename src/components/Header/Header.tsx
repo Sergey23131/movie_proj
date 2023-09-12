@@ -1,6 +1,4 @@
-import {useState} from "react";
 import {Link} from "react-router-dom";
-import {SearchPanel} from "../SearchPanel";
 import css from './Header.module.css';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux";

@@ -14,7 +14,7 @@ interface IProps {
 const MovieListCard: FC<IProps> = ({movie}) => {
     const {style} = useAppSelector(state => state.movieReducer);
 
-    const {id, original_title, vote_average, poster_path, genre_ids, overview} = movie;
+    const {id, original_title, vote_average, poster_path, genre_ids} = movie;
 
     const roundedNumber = vote_average.toFixed(1);
 

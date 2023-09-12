@@ -1,8 +1,7 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC} from "react";
 import css from './Pagination.module.css';
-import {useAppDispatch, useAppSelector} from "../../hooks";
-import {movieActions} from "../../redux";
-import {IGenres} from "../../interfaces";
+import {useAppSelector} from "../../hooks";
+
 
 interface IProps {
     onPageChange: (page: number) => void;

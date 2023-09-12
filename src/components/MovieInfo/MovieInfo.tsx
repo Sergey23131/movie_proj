@@ -1,7 +1,6 @@
 import React, {FC, useEffect} from "react";
-import {IGenres, IMovie, IVideo} from "../../interfaces";
+import {IGenres} from "../../interfaces";
 import css from './MovieInfo.module.css';
-import {GenreBadge} from "../GenreBadge";
 import {StarsRating} from "../StarsRating";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../redux";

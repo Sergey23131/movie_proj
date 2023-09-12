@@ -1,4 +1,3 @@
-import styles from './Loading.module.css';
 import {useAppSelector} from "../../hooks";
 import css from "../HeaderPreview/HeaderPreview.module.css";
 
