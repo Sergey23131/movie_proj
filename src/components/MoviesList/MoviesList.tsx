@@ -14,6 +14,7 @@ const MovieList: FC = () => {
     const {genres} = useAppSelector(state => state.genresReducer);
     const [genreId, setGenreId] = useState<number | null>(null);
     const [search, setSearch] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
 
     const dispatch = useAppDispatch();
@@ -64,9 +65,12 @@ const MovieList: FC = () => {
             </div>
             <div className={css.movieListSearch}>
                 <div><HeaderPreview onSearchClick={handleSearchClick}/></div>
-                <div>
-                    {movies && movies.map(value => <MovieListCard key={value.id} movie={value}/>)}
-                </div>
+                <div className={style? css.moviesListContLight: css.moviesListContDark}>
+                    {movies.length > 0 ? (
+                        movies.map((value) => <MovieListCard key={value.id} movie={value} />)
+                    ) : (
+                        <p className={css.warningSearch}>No data. You entered an incorrect movie name or the movie does not exist.</p>
+                    )}                </div>
                 <div>
                     <Pagination  onPageChange={handlePageChange}/>
                 </div>

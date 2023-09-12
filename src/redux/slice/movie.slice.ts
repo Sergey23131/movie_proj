@@ -12,7 +12,8 @@ interface IState {
     errors: IError,
     style: boolean,
     page: number,
-    total_pages: number
+    total_pages: number,
+    isLoading: boolean,
 
 }
 
@@ -23,7 +24,8 @@ const initialState: IState = {
     errors: null,
     style: false,
     page: 1,
-    total_pages: 1
+    total_pages: 1,
+    isLoading: false,
 
 };
 
@@ -125,10 +127,19 @@ const slice = createSlice({
 
     extraReducers: builder =>
         builder
+            .addCase(getAll.pending, (state) => {
+                state.isLoading = true; // Начало загрузки
+            })
             .addCase(getAll.fulfilled, (state, action) => {
                 state.movies = action.payload.movies;
                 state.total_pages = action.payload.total_pages;
+                state.isLoading = false; // Конец загрузки
             })
+            .addCase(getAll.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false; // Конец загрузки с ошибкой
+            })
+
             .addCase(getByGenre.fulfilled, (state, action) => {
                 state.movies = action.payload.movies;
                 state.total_pages = action.payload.total_pages;
@@ -140,7 +151,6 @@ const slice = createSlice({
             .addCase(getByID.fulfilled, (state, action) => {
                 state.movie = action.payload
             })
-
             .addCase(getVideo.fulfilled, (state, action) => {
                 state.movieVideo = action.payload
             })

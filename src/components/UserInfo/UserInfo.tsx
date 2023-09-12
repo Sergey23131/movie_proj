@@ -1,71 +1,60 @@
 import css from './UserInfo.module.css'
 import {useState} from "react";
+import {useAppSelector} from "../../hooks";
 
 
 const UserInfo = () => {
-    const [activeTab, setActiveTab] = useState('tab1');
+    const {style} = useAppSelector(state => state.movieReducer);
 
+    const [info, setInfo] = useState(""); // Информация для отображения
 
+    // Функции для обработки событий клика по кнопкам
+    const displayInfo1 = () => {
+        setInfo("Favorite movies of user");
+    };
 
+    const displayInfo2 = () => {
+        setInfo("Movies that user wants to watch later");
+    };
 
-    const handleTabClick = (tab:any) => {
-        setActiveTab(tab);
+    const displayInfo3 = () => {
+        setInfo("List of films for the user that he is likely to like");
     };
 
     return (
-        <div className={css.userInfoContainer}>
+        <div className={style ? css.userInfoContainerLight : css.userInfoContainerDark}>
             <div className={css.userInfoCard}>
+                <div className={css.userInfoTitle}><p>Fake user card</p></div>
                 <div className={css.userInfoContent}>
                     <img src="/images/img_3.png" alt="userPage" className={css.userImage}/>
 
                     <div className={css.userInfoDetails}>
-                        <div className={css.userInfoName}>Name:John Doe</div>
-                        <div className={css.userInfoInfo}>
-                            Location: New York
-                        </div>
-                        <div className={css.userInfoInfo}>
-                            Date of Registration: 01.01.2020
+                        <div className={css.userInfo}>
+                            <p>Name:John Doe</p>
+                            <p> Date of Registration: 01.01.2020</p>
+                            <p>Location: New York</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae delectus deserunt facere
+                                hic minima molestias possimus quod ullam voluptates! Aliquid animi ducimus enim fugit
+                                iste nihil odio omnis quam quisquam quo rem, reprehenderit rerum saepe sed similique
+                                suscipit vero. Deserunt ea magni tenetur. Aut blanditiis culpa dolores, ipsum magni
+                                necessitatibus veniam? A accusamus ad asperiores at cum cupiditate, delectus doloribus
+                                est expedita id iste laboriosam magnam mollitia, neque nesciunt odio quasi quibusdam
+                                quis quo sapiente sed similique tenetur ut voluptate voluptatem. Obcaecati, porro,
+                                voluptatem. Alias aut deleniti dolore dolores ea eum ex, iusto laborum minus nihil porro
+                                sapiente ut, voluptatum.</p>
                         </div>
 
 
                     </div>
                 </div>
-                <div className={css.userInfoTabs}>
-                    <div
-                        className={`${css.userInfoTab} ${
-                            activeTab === 'tab1' ? css.active : ''
-                        }`}
-                        onClick={() => handleTabClick('tab1')}
-                    >
-                        Tab 1
+                <div className={css.buttonInfoApp}>
+
+                    <button onClick={displayInfo1} className={css.userButton}>Favorite movies</button>
+                    <button onClick={displayInfo2} className={css.userButton}>Watch later list</button>
+                    <button onClick={displayInfo3} className={css.userButton}>You might like it</button>
+                    <div id="info-container">
+                        <p>{info}</p>
                     </div>
-                    <div
-                        className={`${css.userInfoTab} ${
-                            activeTab === 'tab2' ? css.active : ''
-                        }`}
-                        onClick={() => handleTabClick('tab2')}
-                    >
-                        Tab 2
-                    </div>
-                    <div
-                        className={`${css.userInfoTab} ${
-                            activeTab === 'tab3' ? css.active : ''
-                        }`}
-                        onClick={() => handleTabClick('tab3')}
-                    >
-                        Tab 3
-                    </div>
-                </div>
-                <div className={css.tabContent}>
-                    {activeTab === 'tab1' && (
-                        <p>This is Tab 1 content.</p>
-                    )}
-                    {activeTab === 'tab2' && (
-                        <p>This is Tab 2 content.</p>
-                    )}
-                    {activeTab === 'tab3' && (
-                        <p>This is Tab 3 content.</p>
-                    )}
                 </div>
             </div>
         </div>

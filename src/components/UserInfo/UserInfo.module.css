@@ -1,5 +1,15 @@
 
-.userInfoContainer {
+.userInfoContainerLight {
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    font-size: 20px;
+}
+
+.userInfoContainerDark {
     color: white;
     display: flex;
     justify-content: center;
@@ -7,20 +17,25 @@
     height: 100vh;
     background-color: #000000;
     font-size: 20px;
-    padding-top: 50px;
 
 }
 
+.userInfoTitle{
+    font-size: 30px;
+    text-align: center;
+
+}
 .userInfoCard {
-    background-color: #000000;
     width: 1000px;
     height: 500px;
 
 }
 
 .userImage {
-height: 200px;
+    margin-top: 20px;
+    height: 200px;
     width: 200px;
+
 }
 
 .userInfoContent {
@@ -28,58 +43,29 @@ height: 200px;
     padding: 20px;
 }
 
-.userInfoPhoto {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-right: 20px;
-    border: 1px solid #ddd;
-}
 
-
-.userInfoDetails {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.userInfoInfo {
-    margin-top: 5px;
-    font-size: 14px;
-}
-
-.userInfoTabs {
-    display: flex;
-    border-top: 1px solid #ddd;
-    margin-top: 20px;
-    background-color: #f9f9f9;
-}
-
-.userInfoTab {
-    flex: 1;
+.buttonInfoApp {
     text-align: center;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-.userInfoTab:hover {
-    background-color: #ddd;
+#info-container {
+    margin-bottom: 20px;
 }
 
-.userInfoTab.active {
+.userButton {
     background-color: #007bff;
-    color: #fff;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
 }
 
-.userInfoTabContent {
-    padding: 20px;
+.userButton:hover {
+    background-color: #0056b3;
 }
 
-.tabContent {
-    display: none;
-}
-
-.tabContent.active {
-    display: block;
+.userInfo {
+    margin-left: 20px;
 }
