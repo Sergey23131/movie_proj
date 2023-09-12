@@ -6,9 +6,8 @@ import {useAppSelector} from "../../hooks";
 const UserInfo = () => {
     const {style} = useAppSelector(state => state.movieReducer);
 
-    const [info, setInfo] = useState(""); // Информация для отображения
+    const [info, setInfo] = useState("");
 
-    // Функции для обработки событий клика по кнопкам
     const displayInfo1 = () => {
         setInfo("Favorite movies of user");
     };

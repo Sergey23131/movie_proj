@@ -26,11 +26,11 @@ const SearchPanel: FC<IProps> = ({onSearchClick}) => {
                         onChange={(e) => setSearchText(e.target.value)}
                         className={css.searchInput}
                     />
-                    <button type="submit" className={css.searchButton}>Search</button> {/* Применяем стили для button */}
+                    <button type="submit" className={css.searchButton}>Search</button>
                 </form>
             </div>
         </div>
     );
 };
 
-export { SearchPanel };
+export {SearchPanel};

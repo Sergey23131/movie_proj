@@ -6,7 +6,7 @@ import {movieActions} from "../../redux";
 
 const Header = () => {
     const {style} = useAppSelector(state => state.movieReducer);
-// МОЖНО В СТИЛЯХ  сделать как тут что бы уменьшить количество кода в ксс
+
     const dispatch = useAppDispatch();
 
     const toggleTheme = () => {
@@ -20,11 +20,14 @@ const Header = () => {
 
     return (
         <div className={`${css.headerWrapper} ${style ? css.headerWrapperLight : css.headerWrapperDark}`}>
-            <div className={`${css.logoLink} ${style ? css.logoLinkLight : css.logoLinkDark}`}onClick={reloadPage}>KOMO FILMS</div>
+            <div className={`${css.logoLink} ${style ? css.logoLinkLight : css.logoLinkDark}`} onClick={reloadPage}>KOMO
+                FILMS
+            </div>
             <div className={css.moviesList} onClick={reloadPage}>
                 Movies List
             </div>
-            <button className={`${css.lightModeButton} ${style ? css.lightModeButtonLight : css.lightModeButtonDark}`}onClick={toggleTheme}>
+            <button className={`${css.lightModeButton} ${style ? css.lightModeButtonLight : css.lightModeButtonDark}`}
+                    onClick={toggleTheme}>
                 {style ? 'Dark Mode' : 'Light Mode'}
             </button>
             <div className={css.headerImg}>

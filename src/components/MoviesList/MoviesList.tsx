@@ -7,7 +7,7 @@ import css from './MovieList.module.css';
 import {GenresList} from "../GenresList";
 import {HeaderPreview} from "../HeaderPreview";
 import {Pagination} from "../Pagination";
-import { Loading } from "../Loading";
+import {Loading} from "../Loading";
 
 
 const MovieList: FC = () => {
@@ -56,12 +56,13 @@ const MovieList: FC = () => {
                 <div><HeaderPreview onSearchClick={handleSearchClick}/></div>
                 <div className={style ? css.moviesListContLight : css.moviesListContDark}>
                     {isLoading ? (
-                        <Loading />
+                        <Loading/>
                     ) : (
                         movies.length > 0 ? (
-                            movies.map((value) => <MovieListCard key={value.id} movie={value} />)
+                            movies.map((value) => <MovieListCard key={value.id} movie={value}/>)
                         ) : (
-                            <p className={css.warningSearch}>No data. You entered an incorrect movie name or the movie does not exist.</p>
+                            <p className={css.warningSearch}>No data. You entered an incorrect movie name or the movie
+                                does not exist.</p>
                         )
                     )}
                 </div>

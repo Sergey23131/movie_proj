@@ -35,6 +35,7 @@ const getAll = createAsyncThunk<{ movies: IMovie[], total_pages: number }, strin
     async (currentPage, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getAll(currentPage);
+            console.log(data)
             const {results, total_pages} = data;
             return {movies: results, total_pages};
         } catch (e) {
