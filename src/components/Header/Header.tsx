@@ -32,7 +32,7 @@ const Header = () => {
                 {style ? 'Dark Mode' : 'Light Mode'}
             </button>
             <div className={css.headerImg}>
-                <Link to="userPage" className={css.userLink}>
+                <Link to="/movies/userPage" className={css.userLink}>
                     <img src="/images/img_3.png" alt="userPage" className={css.userImage}/>
                 </Link>
             </div>
