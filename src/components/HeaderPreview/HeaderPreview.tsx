@@ -19,9 +19,9 @@ const HeaderPreview: FC<IProps> = ({onSearchClick}) => {
 
     const [currentImage, setCurrentImage] = useState(0);
     const images = [
-        '/images/img',
-        '/images/img_1.png',
-        '/images/img_2.png',
+        "./images/img",
+        "./images/img_1.png",
+        "./images/img_2.png",
     ];
 
     useEffect(() => {
