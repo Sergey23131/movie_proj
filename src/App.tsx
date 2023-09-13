@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './App.module.css';
 
-import {HashRouter, Navigate, Route, Routes} from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 
 import {MainLayout} from './layouts';
 
@@ -16,7 +16,7 @@ const App = () => {
 
     return (
         <div className={style ? css.AppMainLight : css.AppMainDark}>
-            <HashRouter>
+            <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
                     <Route index element={<Navigate to={'movies'}/>}/>
                     <Route path={'movies'} element={<MovieList/>}/>
@@ -25,7 +25,7 @@ const App = () => {
 
 
                 </Route>
-            </HashRouter>
+            </Routes>
         </div>
     );
 }
