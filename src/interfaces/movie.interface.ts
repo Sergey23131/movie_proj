@@ -14,5 +14,11 @@ export interface IMovie {
     video: boolean;
     vote_average: number;
     vote_count: number;
+}
 
+export interface IMovieResponse {
+    page: number;
+    results: IMovie[];
+    total_pages: number;
+    total_results: number;
 }

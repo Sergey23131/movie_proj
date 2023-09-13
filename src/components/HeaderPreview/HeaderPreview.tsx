@@ -19,10 +19,9 @@ const HeaderPreview: FC<IProps> = ({onSearchClick}) => {
 
     const [currentImage, setCurrentImage] = useState(0);
     const images = [
-        '/images/img.png',
+        '/images/img',
         '/images/img_1.png',
         '/images/img_2.png',
-        // Добавьте дополнительные изображения
     ];
 
     useEffect(() => {
@@ -53,7 +52,6 @@ const HeaderPreview: FC<IProps> = ({onSearchClick}) => {
             ))}
             <div className={css.Caption}>
                 <p className={css.CaptionText}>FIND YOUR FAVORITE MOVIE NOW</p>
-                {/* Добавьте класс SearchPanel здесь */}
                 <div className={css.SearchPanel}>
                     <SearchPanel onSearchClick={onSearchClick}/>
                 </div>

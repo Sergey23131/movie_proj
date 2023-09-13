@@ -2,7 +2,7 @@
   "name": "movie_proj",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sergey23131.github.io/movie_proj",
+  "homepage": "https://Sergey23131.github.io/movie_proj",
   "dependencies": {
     "@hookform/resolvers": "^3.1.0",
     "@reduxjs/toolkit": "^1.9.5",
