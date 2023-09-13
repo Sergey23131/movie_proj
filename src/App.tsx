@@ -18,9 +18,9 @@ const App = () => {
         <div className={style ? css.AppMainLight : css.AppMainDark}>
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
-                    <Route index element={<Navigate to={'movie_proj'}/>}/>
-                    <Route path={'movie_proj'} element={<MovieList/>}/>
-                    <Route path={'/movie_proj/:id'} element={<MoviePage/>}/>
+                    <Route index element={<Navigate to={'movies'}/>}/>
+                    <Route path={'movies'} element={<MovieList/>}/>
+                    <Route path={'/movies/:id'} element={<MoviePage/>}/>
                     <Route path={'/userPage'} element={<UserPage/>}/>
 
 
