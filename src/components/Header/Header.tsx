@@ -33,7 +33,7 @@ const Header = () => {
             </button>
             <div className={css.headerImg}>
                 <Link to="/movies/userPage" className={css.userLink}>
-                    <img src="../images/img_3.png" alt="userPage" className={css.userImage}/>
+                    <img src="./images/img_3.png" alt="userPage" className={css.userImage}/>
                 </Link>
             </div>
 
