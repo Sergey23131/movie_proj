@@ -1,21 +1,29 @@
 .movieInfoWrapper{
-    padding-top: 70px;
+
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 850px;
+    padding-top: 80px;
     padding-left: 40px;
     padding-bottom: 20px;
 }
 
 .movieInfoWrapperDark {
     color: white;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
 
 }
 
 .movieInfoWrapperLight {
     color: #000000;
-
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
 }
 
 .movieInfoBox3{
-    padding-left: 40px;
+
+    padding-left: 50px;
     font-size: 20px;
 }
 
@@ -74,7 +82,7 @@
 
 }
 
-.roundedNumberWrapper{
-    position: absolute;
-}
+.movieInfoVideo{
+    padding-top: 3%;
 
+}

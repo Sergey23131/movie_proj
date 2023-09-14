@@ -58,9 +58,12 @@ const MovieInfo: FC<IProps> = ({movieInfo}) => {
                         Genres: {genres.map((value: IGenres) => (
                         <div key={value.id} className={css.movieOneGenre}>{value.name}</div>
                     ))}
+
                     </div>
                     <p className={css.movieInfoOverview}>Overview: {overview}</p>
-                    {movieVideo && <VideoPlayer videoInfo={movieVideo}/>}
+                    <div className={css.movieInfoVideo}>
+                        {movieVideo && <VideoPlayer videoInfo={movieVideo}/>}
+                    </div>
                 </div>
             </div>
         </div>

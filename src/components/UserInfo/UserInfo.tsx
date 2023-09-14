@@ -26,7 +26,7 @@ const UserInfo = () => {
             <div className={css.userInfoCard}>
                 <div className={css.userInfoTitle}><p>Fake user card</p></div>
                 <div className={css.userInfoContent}>
-                    <img src="/images/img_3.png" alt="userPage" className={css.userImage}/>
+                    <img src="./images/img_3.png" alt="userPage" className={css.userImage}/>
 
                     <div className={css.userInfoDetails}>
                         <div className={css.userInfo}>
